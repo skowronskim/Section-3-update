@@ -1,0 +1,161 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.25 }); // Adjust threshold as needed
+
+  const elementsToObserve = document.querySelectorAll('.one, .two, .three, .opacityin, .ProductsCTA')
+
+  elementsToObserve.forEach(element => {
+    observer.observe(element);
+  });
+});
+// Scroll end
+
+
+document.addEventListener('scroll', function() {
+  let offset = window.pageYOffset;
+  let parallaxBg = document.querySelector('.parallax ');
+  parallaxBg.style.transform = 'translateY(' + offset * 0.5 + 'px)';
+});
+// parallax end
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH1, .imgH2, .imgH3, .imgH4,  .imgH5, .imgH6, .imgH7');
+  const expandedImageContainer = document.querySelector('.expanded-image-container');
+  const expandedImage = document.querySelector('.expanded-image');
+  const closeIcon = document.querySelector('.close-icon');
+  const captions = [
+      "Caption for Honey 1",
+      "Caption for Honey 2",
+      "Caption for Honey 3",
+      "Caption for Honey 4",
+      "Caption for Honey 5",
+      "Caption for Honey 6",
+      "Caption for Honey 7"
+  ];
+
+  honeycombImages.forEach((image, index) => {
+      image.addEventListener('click', function() {
+          expandedImage.src = this.src;
+          expandedImageContainer.style.display = 'flex';
+          const expandedCaption = document.querySelector('.expanded-caption');
+          expandedCaption.textContent = captions[index]; // Set the caption text
+      });
+  });
+
+  closeIcon.addEventListener('click', function() {
+      expandedImageContainer.style.display = 'none';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH1');
+
+  honeycombImages.forEach(image => {
+    image.addEventListener('mouseover', function() {
+      document.querySelector('.background').classList.add('h1');
+    });
+
+    image.addEventListener('mouseout', function() {
+      document.querySelector('.background').classList.remove('h1');
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH2');
+
+  honeycombImages.forEach(image => {
+    image.addEventListener('mouseover', function() {
+      document.querySelector('.background').classList.add('h2');
+    });
+
+    image.addEventListener('mouseout', function() {
+      document.querySelector('.background').classList.remove('h2');
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH3');
+
+  honeycombImages.forEach(image => {
+    image.addEventListener('mouseover', function() {
+      document.querySelector('.background').classList.add('h3');
+    });
+
+    image.addEventListener('mouseout', function() {
+      document.querySelector('.background').classList.remove('h3');
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH4');
+
+  honeycombImages.forEach(image => {
+    image.addEventListener('mouseover', function() {
+      document.querySelector('.background').classList.add('h4');
+    });
+
+    image.addEventListener('mouseout', function() {
+      document.querySelector('.background').classList.remove('h4');
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH5');
+
+  honeycombImages.forEach(image => {
+    image.addEventListener('mouseover', function() {
+      document.querySelector('.background').classList.add('h5');
+    });
+
+    image.addEventListener('mouseout', function() {
+      document.querySelector('.background').classList.remove('h5');
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH6');
+
+  honeycombImages.forEach(image => {
+    image.addEventListener('mouseover', function() {
+      document.querySelector('.background').classList.add('h6');
+    });
+
+    image.addEventListener('mouseout', function() {
+      document.querySelector('.background').classList.remove('h6');
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const honeycombImages = document.querySelectorAll('.imgH7');
+
+  honeycombImages.forEach(image => {
+    image.addEventListener('mouseover', function() {
+      document.querySelector('.background').classList.add('h7');
+    });
+
+    image.addEventListener('mouseout', function() {
+      document.querySelector('.background').classList.remove('h7');
+    });
+  });
+});
+
+// Honeycomb end
+
+
+// JavaScript code to remove the stylesheet when the condition is met
+if (window.matchMedia("(min-width: 1000px)").matches) {
+  var stylesheet = document.getElementById("myStylesheet");
+  if (stylesheet) {
+    stylesheet.parentNode.removeChild(stylesheet);
+  }
+}
+
+
